@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.forty2.training.crud.mapper.EmpMapper">
+    <insert id="insertEmp">
+        insert into t_emp values (null, #{empName}, #{empAge}, #{empSalary})
+    </insert>
+
+    <update id="updateEmp">
+        update t_emp
+        set emp_name=#{empName},
+            emp_age=#{empAge},
+            emp_salary=#{empSalary}
+        where emp_id = #{empId}
+    </update>
+
+    <delete id="deleteEmpById">
+        delete
+        from t_emp
+        where emp_id = #{id}
+    </delete>
+
+    <select id="queryEmpById" resultType="com.forty2.training.crud.pojo.Emp">
+        select *
+        from t_emp
+        where emp_id = #{id}
+    </select>
+
+    <select id="queryAllEmp" resultType="com.forty2.training.crud.pojo.Emp">
+        select * from t_emp
+    </select>
+</mapper>
