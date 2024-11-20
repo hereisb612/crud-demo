@@ -2,6 +2,7 @@ package com.forty2.training.crud;
 
 import com.forty2.training.crud.mapper.EmpMapper;
 import com.forty2.training.crud.pojo.Emp;
+import com.github.pagehelper.PageHelper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -45,6 +46,7 @@ public class BasicCRUDTest {
 
     @Test
     public void test5() {
+        PageHelper.startPage(1, 1);
         List<Emp> emps = empMapper.queryAllEmp();
         emps.forEach(System.out::println);
     }
