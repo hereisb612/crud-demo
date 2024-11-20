@@ -5,9 +5,7 @@ import com.forty2.training.crud.pojo.Emp;
 import com.github.pagehelper.PageHelper;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
